@@ -1,0 +1,61 @@
+todo:
+- add model for collaborators
+- add model for check-in
+
+functions:
+- M: create user (done)
+- Q: login (done)
+- M: add friend
+- Q: get friends
+- Q: get my created goals (done)
+- Q: get my collab goals
+- M: check-in to a specific goal
+
+
+createUser
+login
+
+addFriend
+getFriends
+
+getMyCreatedGoals (in getUser)
+getMyCollaboratedGoals (in getUser)
+
+getMyNewsFeed
+
+createGoal // creates a goal
+updateGoal // updates a goal
+collaborateOnGoal // collaborate on goal
+
+goalCheckIn
+getGoalCheckIns (in get goal)
+
+// do updates later
+
+// collaborator model:
+// -- goal id
+// -- user id
+
+// check-in model:
+// -- goal id
+// -- user id
+// -- time
+// -- points
+
+
+
+  type Query {
+    DONE login(loginInput: LoginInput): AuthData!
+    DONE getUser(userId: ID!): User
+    DONE getNewsFeed(userId: ID!): [Goal!]!
+  }
+
+  type Mutation {
+    DONE createUser(userInput: UserInput): User
+    DONE addFriend(userId: ID!, friendId: ID!): User
+    DONE createGoal(userId: ID!, goalInput: GoalInput): Goal
+    DONE completeGoal(userId: ID!, goalInput: GoalInput): Goal
+    DONE collaborateOnGoal(userId: ID!, goalId: ID!): Goal
+    goalCheckIn(userId: ID!, goalId: ID!): CheckIn
+    likeGoal(userId: ID!, goalId: ID!): Goal
+  }s

@@ -1,0 +1,8 @@
+{
+  "env" : {
+    "PORT": 8000,
+    "BASE_URL" : "http://localhost:8000",
+    "DATABASE_URL" : "mongodb+srv://databaseuser1:HADY373vETEcZVET@cluster0-x48cr.mongodb.net/goals-dev?retryWrites=true&w=majority",
+    "SECRET_KEY" : "goallaboratorsecretkey"
+  }
+}
